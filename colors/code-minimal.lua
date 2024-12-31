@@ -28,7 +28,7 @@ local spec = lush.extends({ codeminimal }).with(function()
 		-- -- While we're here, we might decide that the default Function group is too bright
 		-- Function({ fg = codeminimal.Function.fg.da(10) }),
 
-		Normal({ fg = codeminimal.Normal.fg, bg = codeminimal.Normal.bg }),
+		Normal({ fg = codeminimal.Normal.fg, bg = "" }),
 	}
 end)
 
