@@ -17,4 +17,20 @@ vim.g.colors_name = "code-minimal"
 package.loaded["lush_theme.code-minimal"] = nil
 
 -- include our theme file and pass it to lush to apply
-require("lush")(require("lush_theme.code-minimal"))
+local lush = require("lush")
+local codeminimal = require("lush_theme.code-minimal")
+
+-- we can apply modifications ontop of the existing colorscheme
+local spec = lush.extends({ codeminimal }).with(function()
+	return {
+		-- Use the existing Comment group in codeminimal, but adjust the gui attribute
+		-- Comment({ fg = codeminimal.Comment.fg, bg = codeminimal.Comment.bg, gui = "italic" }),
+		-- -- While we're here, we might decide that the default Function group is too bright
+		-- Function({ fg = codeminimal.Function.fg.da(10) }),
+
+		Normal({ fg = codeminimal.Normal.fg, bg = codeminimal.Normal.bg }),
+	}
+end)
+
+-- then pass the extended spec to lush for application
+lush(spec)

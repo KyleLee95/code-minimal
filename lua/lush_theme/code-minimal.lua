@@ -81,7 +81,8 @@ local theme = lush(function(injected_functions)
 		-- For the unused code, use Identifier's fg (9cdcfe) as the base color,
 		-- editorUnnecessaryCode.opacity is 000000aa (the alpha value is aa),
 		-- so the color will be 9cdcfeaa. Converting hexa to hex gets 729db4.
-		UnnecessaryCode({ fg = "#729db4" }),
+		-- UnnecessaryCode({ fg = "#729db4" }),
+		UnnecessaryCode({ fg = gray2 }),
 		-- Git diff
 		DiffTextAdded({ bg = "#214d29" }), -- diffEditor.insertedTextBackground (DiffLineAdded as its background)
 		DiffTextDeleted({ bg = "#712928" }), -- diffEditor.removedTextBackground (DiffLineDeleted as its background)
@@ -368,6 +369,7 @@ local theme = lush(function(injected_functions)
 		sym("@lsp.typemod.namespace.library.rust")({ fg = blue_green }),
 		sym("@lsp.typemod.namespace.attribute")({ fg = blue_green }),
 		sym("@lsp.typemod.defaultLibrary")({ fg = light_blue }),
+		sym("@lsp.typemod.variable.defaultLibrary")({ fg = off_white, gui = "bold" }),
 		sym("@lsp.typemod.crateRoot")({ fg = blue_green }),
 
 		sym("@module")({ fg = blue_green }),
