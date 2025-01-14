@@ -134,7 +134,7 @@ local theme = lush(function(injected_functions)
 		-- MsgSeparator { },
 		MoreMsg({ fg = norm_fg }),
 		NonText({ fg = gray2 }),
-		Normal({ fg = off_white, bg = norm_bg }),
+		Normal({ fg = off_white, bg = "" }),
 		-- NormalNC { },
 		Pmenu({ fg = norm_fg, bg = Normal.bg }), -- editorSuggestWidget.background/foreground
 		PmenuSel({ fg = white, bg = selected_item_bg }),
